@@ -18,7 +18,7 @@ function game2Draw(){
   background('rgba(0,255,0, 0.25)');
   
   fill('black');
-  text('Activity 2 goes here', 200, 200);
+  text('Jessica', 200, 200);
 }
 
 function game2MousePressed(){
