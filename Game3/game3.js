@@ -17,12 +17,12 @@ function game3Setup(){
   game4Button.show();
   
   stroke(0);
-  fill("red");
-  circle(100,100, 200);
+  fill("pink");
+  rect(0,0, 200);
   fill("blue");
   rect(200,0, 200,200);
-  fill("green");
-  circle(300,300, 200);
+  fill("lightblue");
+  rect(200,200, 200);
   fill("yellow");
   rect(0,200, 200,200);
   noStroke();
