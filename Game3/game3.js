@@ -35,4 +35,6 @@ function game3Draw(){
   
   fill(220);
   circle(exercise3x, exercise3y, 10);
+
+  text("carsyn", 100, 100);
 }
