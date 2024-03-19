@@ -3,6 +3,7 @@ function game2Preload(){
 }
 
 function game2Setup(){
+  drawingContext.setLineDash([6]);
   background('rgba(0,255,0, 0.25)');
   currentActivity = 2;
   
@@ -17,8 +18,14 @@ function game2Setup(){
 function game2Draw(){
   background('rgba(0,255,0, 0.25)');
   
-  fill('black');
   text('Jessica', 200, 200);
+  //roof
+  triangle(75,150,327,152,200,40);
+  //walls
+  stroke(0);
+  rect(75,150,250,230);
+  //door
+  rect(160,250,75,135);
 }
 
 function game2MousePressed(){
