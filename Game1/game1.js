@@ -5,6 +5,7 @@ function game1Preload(){
 }
 
 function game1Setup(){
+  drawingContext.setLineDash([6]);
   background('#fae');
   currentActivity = 1;
   
@@ -15,8 +16,6 @@ function game1Setup(){
   game3Button.show();
   game4Button.show();
   
-  // Set the size of the owl image
-  owlImage.resize(150, 150);
 }
 
 function game1Draw(){
@@ -24,5 +23,17 @@ function game1Draw(){
   
   fill('black');
   text('Activity 1 goes here', 200, 200);
-  image(owlImage, 150, 210);
+  fill('black');
+  text('Jessica', 200, 200);
+  //roof
+  fill(168, 0, 10);
+  triangle(75,150,327,152,200,40);
+  //wall
+  stroke(0);
+  fill(225,220,0);
+  rect(75,150,250,230);
+  //door
+  fill(0,700,520);
+  rect(160,250,75,135);
+  line(200,400);
 }
