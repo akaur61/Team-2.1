@@ -1,5 +1,7 @@
+let game2Photo1;
+
 function game2Preload(){
-  
+  game2Photo1= loadImage("Game2/penguin.jpg");
 }
 
 function game2Setup(){
@@ -16,9 +18,11 @@ function game2Setup(){
 
 function game2Draw(){
   background('rgba(0,255,0, 0.25)');
+  image(game2Photo1,30,20);
   
 }
 
 function game2MousePressed(){
+  
   
 }
