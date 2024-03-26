@@ -1,8 +1,5 @@
-let exercise3x = 200;
-let exercise3y = 200;
 
-function game3Preload(){
-  
+function game3Preload(){  
 }
 
 function game3Setup(){
@@ -40,12 +37,7 @@ function game3Setup(){
 }
 
 function game3Draw(){
-  
-  exercise3x = exercise3x + random(4) - 2;
-  exercise3y = exercise3y + random(4) - 2;
-  
-  fill(220);
-  circle(exercise3x, exercise3y, 10);
+
 
   
 }

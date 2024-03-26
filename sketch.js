@@ -37,7 +37,7 @@ function setup() {
   createCanvas(400, 600);
   background(220);
   menuButton = createButton('Home Page');
-  menuButton.position(90, 100);
+  menuButton.position(50, 50);
   menuButton.mousePressed(switchToMM);
   menuButton.hide();
   
