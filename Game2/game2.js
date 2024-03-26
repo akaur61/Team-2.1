@@ -1,11 +1,12 @@
 let game2Photo1;
 
 function game2Preload(){
-  game2Photo1= loadImage("Game2/penguin.jpg");
+  game2Photo1= loadImage("Game2/penguin.png");
 }
 
 function game2Setup(){
-  background('rgba(0,255,0, 0.25)');
+  document.body.style.backgroundColor = "blue";
+  // background('rgb(178,255,255)');
   currentActivity = 2;
   
   // Hide the Activity 2 button, show all the other buttons
@@ -17,8 +18,8 @@ function game2Setup(){
 }
 
 function game2Draw(){
-  background('rgba(0,255,0, 0.25)');
-  image(game2Photo1,30,20);
+  background('rgb(178,255,255)');
+  image(game2Photo1,50,140);
   
 }
 
