@@ -4,7 +4,7 @@
 
 let currentActivity = 0;
 let menuButton, game1Button, game2Button, game3Button, game4Button;
-let photo1;
+
 /***** 
   * If you want to load images or sounds into your application,
   * try using preload()
@@ -31,18 +31,19 @@ function switchToMM(){
   game2Button.show();
   game3Button.show();
   game4Button.show();
+  
 }
 
 function setup() {
   createCanvas(400, 600);
   background(220);
   menuButton = createButton('Home Page');
-  menuButton.position(100, 100);
+  menuButton.position(50, 50);
   menuButton.mousePressed(switchToMM);
   menuButton.hide();
   
   game1Button = createButton('Tracing Game');
-  game1Button.position(50, 550);
+  game1Button.position(50, 400);
   game1Button.mousePressed(game1Setup);
   game1Button.show();
   
@@ -52,7 +53,7 @@ function setup() {
   game2Button.show();
   
   game3Button = createButton('Matching Game');
-  game3Button.position(250, 550);
+  game3Button.position(250, 400);
   game3Button.mousePressed(game3Setup);
   game3Button.show();
   
