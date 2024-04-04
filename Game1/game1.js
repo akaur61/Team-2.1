@@ -1,11 +1,8 @@
-let owlImage;
-
 function game1Preload(){
-  owlImage = loadImage("Game1/owlCarving.jpg");
+
 }
 
 function game1Setup(){
-  drawingContext.setLineDash([6]);
   background('#fae');
   currentActivity = 1;
   
@@ -15,25 +12,45 @@ function game1Setup(){
   game2Button.show();
   game3Button.show();
   game4Button.show();
+
+  /*fill("black");
+  stroke(1);
+  line(75,200,320,200)//bottom
+  line(320,200,200,70)//right
+  line(200,70,75,200)//left
+  //rectangle
+  line(75,200,75,425)//left
+  line(75,425,320,425)//bottom
+  line(320,425,320,200)//right
+  //door
+  line(175,330,175,425)//left
+  line(225,330,225,425)//right
+  line(175,330,225,330)//top*/
   
 }
 
 function game1Draw(){
-  background('#fae');
-  
-  fill('black');
-  text('Activity 1 goes here', 200, 200);
-  fill('black');
-  text('Jessica', 200, 200);
-  //roof
-  fill(168, 0, 10);
-  triangle(75,150,327,152,200,40);
-  //wall
-  stroke(0);
-  fill(225,220,0);
-  rect(75,150,250,230);
+  strokeWeight(1);
+  drawingContext.setLineDash([5, 15]); 
+
+  if (mouseIsPressed) {
+    fill(0);
+  } else {
+    noStroke();
+    noFill();
+  }
+  ellipse(mouseX, mouseY, 5, 5);
+
+  //triangle
+  line(75,200,320,200)//bottom
+  line(320,200,200,70)//right
+  line(200,70,75,200)//left
+  //rectangle
+  line(75,200,75,425)//left
+  line(75,425,320,425)//bottom
+  line(320,425,320,200)//right
   //door
-  fill(0,700,520);
-  rect(160,250,75,135);
-  line(200,400);
+  line(175,330,175,425)//left
+  line(225,330,225,425)//right
+  line(175,330,225,330)//top
 }
