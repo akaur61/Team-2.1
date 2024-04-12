@@ -13,19 +13,10 @@ function game1Setup(){
   game3Button.hide();
   game4Button.hide();
 
-  /*fill("black");
-  stroke(1);
-  line(75,200,320,200)//bottom
-  line(320,200,200,70)//right
-  line(200,70,75,200)//left
-  //rectangle
-  line(75,200,75,425)//left
-  line(75,425,320,425)//bottom
-  line(320,425,320,200)//right
-  //door
-  line(175,330,175,425)//left
-  line(225,330,225,425)//right
-  line(175,330,225,330)//top*/
+  /*game1Button = createButton("Done!");
+  game1Button.position(175,490);
+  game1Button.mousePressed(game1Setup);
+  game1Button.show();*/
   
 }
 
@@ -33,31 +24,37 @@ function game1Draw(){
   strokeWeight(1);
   drawingContext.setLineDash([5, 15]); 
 
- 
-
-  //triangle
-  fill(168, 0, 10);
-  triangle(75,200,320,200,200,70);
+  //roof
   line(75,200,320,200)//bottom
   line(320,200,200,70)//right
   line(200,70,75,200)//left
-  //rectangle
-  stroke(0)
-  fill("yellow")
-  rect(75,200,245,225)
-  fill("pink")
-  rect(75,200,100,225)//left recatangle
-  rect(225,200,95,225)//right rectangle
-  rect(200,220,95)//middle rectangle
-  line(75,200,75,425)//left
-  line(75,425,320,425)//bottom
-  line(320,425,320,200)//right
+
   //door
-  fill(0,700,520);
-  rect(175,330,50,96)
   line(175,330,175,425)//left
   line(225,330,225,425)//right
   line(175,330,225,330)//top
+
+  //rectangle
+  line(75,200,75,425)//left
+  line(75,425,320,425)//bottom
+  line(320,425,320,200)//right
+
+  //roof
+  fill("skyblue");
+  noStroke();
+  triangle(84,197,311,197,200,75);
+
+  //door
+  fill("purple");
+  noStroke();
+  rect(179,333,43,88)
+
+  //walls
+  fill("pink")
+  noStroke();
+  rect(78,205,94,215)//left recatangle
+  rect(230,205,87,215)//right rectangle
+  rect(165,205,70,123)//middle rectangle
 
   if (mouseIsPressed) {
     fill(0);
