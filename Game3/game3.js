@@ -1,4 +1,9 @@
 
+let colorValue = "deeppink";
+let recValue = "pink";
+
+
+
 function game3Preload(){  
 }
 
@@ -23,7 +28,7 @@ function game3Setup(){
   fill("lightyellow");
   rect(0,200, 200,200);
   fill("deeppink");
-  circle(100,300, 100);
+  circle(100,300,100);
   fill("lightgreen");
   rect(50,60,100,100);
   fill("steelblue");
@@ -32,12 +37,39 @@ function game3Setup(){
   rect(230,250,150,100);
   
   noStroke();
+  
+
 
   
+  //describe('coral 50-by-50 rect turns red with mouse click/press.');
 }
 
+
 function game3Draw(){
+  fill('black');
+  text('Where is the circle?',140,450);
+  textSize(20);
 
 
+fill(colorValue);
+  circle(100,300,100);
   
+  fill(recValue);
+  rect(50,60,100,100);
+}
+
+
+function game3MousePressed(){
+  if(mouseX > 50 && mouseX < 150
+    && mouseY >60 && mouseY < 160){
+     if(recValue == 'yellow')
+      recValue = 'pink';
+      else 
+        recValue = "yellow";
+  }
+if (colorValue == 'lightgreen') {
+  colorValue = 'pink';
+} else {
+  colorValue = 'lightgreen';
+}
 }
