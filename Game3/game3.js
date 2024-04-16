@@ -47,8 +47,9 @@ function game3Setup(){
 
 function game3Draw(){
   fill('black');
-  text('Where is the circle?',140,450);
   textSize(20);
+  text('Where is the circle?',140,450);
+  
 
 
 fill(colorValue);
@@ -67,9 +68,11 @@ function game3MousePressed(){
       else 
         recValue = "yellow";
   }
-if (colorValue == 'lightgreen') {
-  colorValue = 'pink';
-} else {
-  colorValue = 'lightgreen';
+
+
+  if (colorValue == 'lightgreen') {
+    colorValue = 'pink';
+  } else {
+    colorValue = 'lightgreen';
 }
 }

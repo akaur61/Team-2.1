@@ -103,6 +103,9 @@ function mousePressed(){
     case 2: 
       game2MousePressed();
       break;
+    case 3: 
+      game3MousePressed();
+      break;
     case 4: 
       game4MousePressed();
       break;
