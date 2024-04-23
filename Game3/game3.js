@@ -26,12 +26,16 @@ let timerInterval; // Timer interval variable
 let timer = 60; // Timer duration in seconds
 let points = 0;
 
+
+
 function game3Preload() {}
 
 function game3Setup() {
   createCanvas(400, 1100);
   background(220);
   currentActivity = 3;
+
+
 
   // Hide the Activity 3 button, show all the other buttons
   menuButton.show();
@@ -43,6 +47,9 @@ function game3Setup() {
   doneButtonSize = 80;
   doneButtonX = width / 2 - doneButtonSize / 2;
   doneButtonY = height / 2 - doneButtonSize / 2;
+
+
+
 
   stroke(0);
   noLoop();
@@ -118,7 +125,7 @@ function drawLevel1() {
   textSize(20);
   text('level 2', doneButtonX + 13, doneButtonY + 45);
 
-
+  
 
 }
 
@@ -181,6 +188,11 @@ function game3MousePressed() {
 
     level2 = true;
     redraw();
+
+  
+
+   
+
   } else {
     if (!level2) {
       updateColorsLevel1();
@@ -188,7 +200,11 @@ function game3MousePressed() {
       updateColorsLevel2();
     }
   }
+
+  
 }
+
+
 
 function updateColorsLevel1() {
   if (mouseX > 50 && mouseX < 150 && mouseY > 60 && mouseY < 160) {
@@ -254,3 +270,4 @@ function startTimer() {
     redraw(); 
   }, 1000); // Update every second
 }
+

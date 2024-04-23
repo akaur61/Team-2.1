@@ -1,7 +1,9 @@
 let game2Photo1;
 let game2Photo2;
-let game2_doneButton; // Variable to hold the "Done" button
-let level2Button; // Variable to hold the level 2 button
+
+let game2doneButton; // Variable to hold the "Done" button
+let game2level2Button; // Variable to hold the level 2 button
+
 let congratulationsScreen = false; // Flag to track if congratulations screen is shown
 let level2ScreenShown = false; // Flag to track if level 2 screen is shown
 
@@ -14,13 +16,14 @@ function game2Setup() {
   createCanvas(400, 600); // Adjust canvas size
   background(178, 255, 255);
   drawingContext.setLineDash([5, 15]);
+  // background('rgb(178,255,255)');
   currentActivity = 2;
-
+  
   // Create the "Done" button
-  game2_doneButton = createButton('Done');
-  game2_doneButton.position(width / 2 - 60, height - 265); // Adjust position to fit in canvas
-  game2_doneButton.size(80, 30); // Set smaller button size
-  game2_doneButton.mousePressed(congratulations); // Call the congratulations function when pressed
+  game2doneButton = createButton('Done');
+  game2doneButton.position(width / 2 - 60, height - 265); // Adjust position to fit in canvas
+  game2doneButton.size(80, 30); // Set smaller button size
+  game2doneButton.mousePressed(congratulations); // Call the congratulations function when pressed
 
   // Hide the "Done" button in other games
   menuButton.show();
@@ -44,13 +47,13 @@ function game2Draw() {
     line(340, 150, 340, 300);
     line(380, 150, 290, 150);
     if (mouseIsPressed) {
-      fill(0);
-    } else {
-      noStroke();
-      noFill();
-    }
-    ellipse(mouseX, mouseY, 5, 5);
-
+    fill(0);
+  } else {
+    noStroke();
+    noFill();
+  }
+  ellipse(mouseX, mouseY, 5, 5);
+  
 
 
     image(game2Photo1, 100, 390);
@@ -72,7 +75,7 @@ function game2Draw() {
       }
     }
     // Hide level 2 button
-    level2Button.hide();
+    game2level2Button.hide();
   }
 }
 
@@ -86,13 +89,13 @@ function congratulations() {
   fill(255); // White text color
   textStyle(BOLD); // Apply bold font style
   text("Congratulations!", width / 2, height / 2);
-  game2_doneButton.hide();
+  game2doneButton.hide();
 
   // Create the level 2 button
-  level2Button = createButton('Level 2');
-  level2Button.position(width / 2 - 60, height / 2 + 50); // Adjust position
-  level2Button.size(80, 30); // Set button size
-  level2Button.mousePressed(game2goToLevel2); // Call the goToLevel2 function when pressed
+  game2level2Button = createButton('Level 2');
+  game2level2Button.position(width / 2 - 60, height / 2 + 50); // Adjust position
+  game2level2Button.size(80, 30); // Set button size
+  game2level2Button.mousePressed(game2goToLevel2); // Call the goToLevel2 function when pressed
 }
 
 function game2goToLevel2() {
@@ -109,5 +112,5 @@ function game2goToLevel2() {
   line(310,150,390,350);
   line(390,150,310,350);
   
-  level2Button.hide()
+  game2level2Button.hide()
 }
