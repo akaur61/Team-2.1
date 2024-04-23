@@ -31,6 +31,7 @@ function switchToMM(){
   game2Button.show();
   game3Button.show();
   game4Button.show();
+  resetButton.hide();
 }
 
 function setup() {
@@ -46,8 +47,8 @@ function setup() {
   game1Button.mousePressed(game1Setup);
   game1Button.show();
   
-  game2Button = createButton('Connect By Numbers');
-  game2Button.position(30, 500);
+  game2Button = createButton('Connect words');
+  game2Button.position(50,500);
   game2Button.mousePressed(game2Setup);
   game2Button.show();
   

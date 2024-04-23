@@ -40,7 +40,7 @@ level2Button.position(200, 200);
 //level2Button.position(width / 2 - 40, height / 2 + 50);
 level2Button.mousePressed(goToLevel2);
 level2Button.hide();
-noLoop();
+//noLoop();
 }
 
 
@@ -243,7 +243,7 @@ function drawFlower() {
 }
 
 
-function mousePressed() {
+function game4MousePressed() {
 
 
    for (let i = 0; i < colors.length; i++) {
