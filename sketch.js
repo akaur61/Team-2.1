@@ -37,7 +37,7 @@ function setup() {
   createCanvas(400, 600);
   background(220);
   menuButton = createButton('Home Page');
-  menuButton.position(100, 100);
+  menuButton.position(10, 10);
   menuButton.mousePressed(switchToMM);
   menuButton.hide();
   
@@ -60,11 +60,6 @@ function setup() {
   game4Button.position(250, 500);
   game4Button.mousePressed(game4Setup);
   game4Button.show();
-
-
-  
-
-
 }
 
 
