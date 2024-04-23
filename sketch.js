@@ -60,6 +60,11 @@ function setup() {
   game4Button.position(250, 500);
   game4Button.mousePressed(game4Setup);
   game4Button.show();
+
+
+  
+
+
 }
 
 
