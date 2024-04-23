@@ -32,13 +32,13 @@ game4Button.hide();
 //noLoop();
 resetButton = createButton('Clear Flower');
 resetButton.position(10, 350);
-resetButton.game4MousePressed(resetFlower);
+resetButton.mousePressed(resetFlower);
 textSize(18);
 textAlign(CENTER, CENTER);
 game4level2Button = createButton('Level 2');
 game4level2Button.position(200, 200);
 //level2Button.position(width / 2 - 40, height / 2 + 50);
-game4level2Button.game4MousePressed(goToLevel2);
+game4level2Button.mousePressed(goToLevel2);
 game4level2Button.hide();
 noLoop();
 }
@@ -245,7 +245,7 @@ function game4MousePressed() {
    for (let i = 0; i < colors.length; i++) {
 
 
-       if (game4MouseX > 50 + 100 * i && mouseX < 100 + 100 * i && mouseY > 150 && mouseY < 200) {
+       if (mouseX > 50 + 100 * i && mouseX < 100 + 100 * i && mouseY > 150 && mouseY < 200) {
 
 
            selectedColor = colors[i];

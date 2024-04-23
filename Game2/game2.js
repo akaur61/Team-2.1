@@ -23,7 +23,7 @@ function game2Setup() {
   game2doneButton = createButton('Done');
   game2doneButton.position(width / 2 - 60, height - 265); // Adjust position to fit in canvas
   game2doneButton.size(80, 30); // Set smaller button size
-  game2doneButton.mousePressed(congratulations); // Call the congratulations function when pressed
+  game2doneButton.mousePressed(game2congratulations); // Call the congratulations function when pressed
 
   // Hide the "Done" button in other games
   menuButton.show();
@@ -79,7 +79,7 @@ function game2Draw() {
   }
 }
 
-function congratulations() {
+function game2congratulations() {
   // Display congratulations message
   congratulationsScreen = true;
   background(197, 179, 229); // lilac background color
