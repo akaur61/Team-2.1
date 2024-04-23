@@ -30,6 +30,7 @@ function switchToMM(){
   game1Button.show();
   game2Button.show();
   game3Button.show();
+  game4Button.show();
   
   window.location.reload();
   

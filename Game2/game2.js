@@ -1,6 +1,6 @@
 let game2Photo1;
 let game2Photo2;
-let doneButton; // Variable to hold the "Done" button
+let game2_doneButton; // Variable to hold the "Done" button
 let level2Button; // Variable to hold the level 2 button
 let congratulationsScreen = false; // Flag to track if congratulations screen is shown
 let level2ScreenShown = false; // Flag to track if level 2 screen is shown
@@ -17,10 +17,10 @@ function game2Setup() {
   currentActivity = 2;
 
   // Create the "Done" button
-  doneButton = createButton('Done');
-  doneButton.position(width / 2 - 60, height - 265); // Adjust position to fit in canvas
-  doneButton.size(80, 30); // Set smaller button size
-  doneButton.mousePressed(congratulations); // Call the congratulations function when pressed
+  game2_doneButton = createButton('Done');
+  game2_doneButton.position(width / 2 - 60, height - 265); // Adjust position to fit in canvas
+  game2_doneButton.size(80, 30); // Set smaller button size
+  game2_doneButton.mousePressed(congratulations); // Call the congratulations function when pressed
 
   // Hide the "Done" button in other games
   menuButton.show();
@@ -86,7 +86,7 @@ function congratulations() {
   fill(255); // White text color
   textStyle(BOLD); // Apply bold font style
   text("Congratulations!", width / 2, height / 2);
-  doneButton.hide();
+  game2_doneButton.hide();
 
   // Create the level 2 button
   level2Button = createButton('Level 2');

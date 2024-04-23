@@ -11,9 +11,9 @@ let flowerParts = {
 let stemColored = 0;
 let petalsColored = 0;
 let centerColored = 0;
-let level2Button; // Variable to hold the level 2 button
-let congratulationsScreen = false; // Flag to track if congratulations screen is shown
-let level2ScreenShown = false; // Flag to track if level 2 screen is shown
+let game4level2Button; // Variable to hold the level 2 button
+let game4congratulationsScreen = false; // Flag to track if congratulations screen is shown
+let game4level2ScreenShown = false; // Flag to track if level 2 screen is shown
 let currentLevel = 1;
 const defaultColors = { ...flowerParts };
 
@@ -32,14 +32,14 @@ game4Button.hide();
 //noLoop();
 resetButton = createButton('Clear Flower');
 resetButton.position(10, 350);
-resetButton.mousePressed(resetFlower);
+resetButton.game4MousePressed(resetFlower);
 textSize(18);
 textAlign(CENTER, CENTER);
-level2Button = createButton('Level 2');
-level2Button.position(200, 200);
+game4level2Button = createButton('Level 2');
+game4level2Button.position(200, 200);
 //level2Button.position(width / 2 - 40, height / 2 + 50);
-level2Button.mousePressed(goToLevel2);
-level2Button.hide();
+game4level2Button.game4MousePressed(goToLevel2);
+game4level2Button.hide();
 noLoop();
 }
 
@@ -64,7 +64,7 @@ function game4Draw(){
        drawFlower();
    } else {
        resetButton.hide();
-       level2Button.hide();
+       game4level2Button.hide();
    }
    checkCompletion();
 }
@@ -99,7 +99,7 @@ function checkCompletion() {
    if (stemColored && petalsColored && centerColored) {
 
 
-       congratulationsScreen = true;
+    game4congratulationsScreen = true;
 
 
        textSize(32);
@@ -112,15 +112,15 @@ function checkCompletion() {
 
 
 
-       level2Button.show();
+       game4level2Button.show();
 
 
        if (currentLevel === 2) {
-//
+
            currentLevel = 1;
-//
+
            resetButton.hide();
-           level2Button.hide();
+           game4level2Button.hide();
            fill('red'); // Make the text color red for visibility
 
 
@@ -128,11 +128,7 @@ function checkCompletion() {
 
 
        } else {
-
-
-           currentLevel += 1;
-
-
+          currentLevel += 1;
        }
    stemColored = petalsColored = centerColored = 0;
 
@@ -153,7 +149,7 @@ function goToLevel2(){
    resetFlower();
 
 
-   level2Button.hide();
+   game4level2Button.hide();
 
 
    resetButton.show();
@@ -243,13 +239,13 @@ function drawFlower() {
 }
 
 
-function mousePressed() {
+function game4MousePressed() {
 
 
    for (let i = 0; i < colors.length; i++) {
 
 
-       if (mouseX > 50 + 100 * i && mouseX < 100 + 100 * i && mouseY > 150 && mouseY < 200) {
+       if (game4MouseX > 50 + 100 * i && mouseX < 100 + 100 * i && mouseY > 150 && mouseY < 200) {
 
 
            selectedColor = colors[i];
@@ -365,7 +361,7 @@ function resetFlower() {
        stemColored = centerColored = petalsColored = 0;
 
 
-       level2Button.hide();
+       game4level2Button.hide();
 
 
        currentLevel = 1;
@@ -380,7 +376,7 @@ function resetFlower() {
        stemColored = centerColored = petalsColored = 0;
 
 
-       level2Button.hide();
+       game4level2Button.hide();
 
 
        currentLevel = 2;
