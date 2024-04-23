@@ -22,6 +22,10 @@ let recFeedback2 = '';
 let coralFeedback2 = '';
 let triangleFeedback2 = '';
 
+let timerInterval; // Timer interval variable
+let timer = 60; // Timer duration in seconds
+let points = 0;
+
 function game3Preload() {}
 
 function game3Setup() {
@@ -42,6 +46,8 @@ function game3Setup() {
 
   stroke(0);
   noLoop();
+
+  startTimer();
 }
 
 function game3Draw() {
@@ -90,7 +96,22 @@ function drawLevel1() {
   text(coralFeedback1, 265, 235);
   text(triangleFeedback1, 270, 40);
   
+  fill('deeppink');
+  textSize(20);
   
+
+  let timerText = 'Time: ' + timer + 's';
+  let timerTextWidth = textWidth(timerText);
+  text(timerText, 150, 40); // Adjusted position
+
+  // Adjust position based on the length of the points value
+  let pointsText = 'Points: ' + points;
+  let pointsTextWidth = textWidth(pointsText);
+  text(pointsText, 155, 70);
+
+
+  noStroke();
+
   fill('pink');
   rect(doneButtonX, doneButtonY, doneButtonSize, doneButtonSize);
   fill('black');
@@ -134,6 +155,17 @@ function drawLevel2() {
   text(coralFeedback2, 295, 235);
   text(triangleFeedback2, 295, 40);
 
+  fill('deeppink');
+  textSize(20);
+
+  let timerText = 'Time: ' + timer + 's';
+  let timerTextWidth = textWidth(timerText);
+  text(timerText, 85 + (timerTextWidth < 70 ? 0 : 70 - timerTextWidth), 500);
+
+  // Adjust position based on the length of the points value
+  let pointsText = 'Points: ' + points;
+  let pointsTextWidth = textWidth(pointsText);
+  text(pointsText, 85 + (pointsTextWidth < 70 ? 0 : 70 - pointsTextWidth), 550);
 
 
   noStroke();
@@ -162,15 +194,20 @@ function updateColorsLevel1() {
   if (mouseX > 50 && mouseX < 150 && mouseY > 60 && mouseY < 160) {
     recValue = (recValue === 'yellow') ? 'red' : 'yellow';
     recFeedback1 = 'Try Again!';
+   
   } else if (dist(mouseX, mouseY, 100, 300) < 50) {
     colorValue = (colorValue === 'deeppink') ? 'lightgreen' : 'deeppink';
     circleFeedback1 = 'Great Job!';
+    points++;
+
   } else if (mouseX > 230 && mouseX < 380 && mouseY > 250 && mouseY < 350) {
     coralValue = (coralValue === 'coral') ? 'red' : 'coral';
     coralFeedback1 = 'Try Again!';
+    
   } else if (triPoint(350, 150, 250, 150, 300, 50, mouseX, mouseY)) {
     triangleValue = (triangleValue === 'steelblue') ? 'red' : 'steelblue';
     triangleFeedback1 = 'Try Again!';
+    
 
   }
   
@@ -181,15 +218,19 @@ function updateColorsLevel2() {
   if (mouseX > 50 && mouseX < 150 && mouseY > 60 && mouseY < 160) {
     level2RecValue = (level2RecValue === 'blue') ? 'red' : 'blue';
     recFeedback2 = 'Try Again!'
+    
   } else if (dist(mouseX, mouseY, 100, 300) < 50) {
     level2ColorValue = (level2ColorValue === 'lightpink') ? 'red' : 'lightpink';
     circleFeedback2 = 'Try Again!';
+    
   } else if (mouseX > 230 && mouseX < 380 && mouseY > 250 && mouseY < 350) {
     level2CoralValue = (level2CoralValue === 'orange') ? 'red' : 'orange';
     coralFeedback2 = 'Try Again!';
+    
   } else if (triPoint(350, 150, 250, 150, 300, 50, mouseX, mouseY)) {
     level2TriangleValue = (level2TriangleValue === 'purple') ? 'lightgreen' : 'purple';
     triangleFeedback2 = 'Good Job!';
+    points++;
   }
  
   redraw();
@@ -202,4 +243,14 @@ function triPoint(x1, y1, x2, y2, x3, y3, px, py) {
   let area3 = Math.abs((x3 - px) * (y1 - py) - (x1 - px) * (y3 - py));
 
   return area1 + area2 + area3 === areaOrig;
+}
+function startTimer() {
+  timerInterval = setInterval(function() {
+    timer--; // Decrement timer
+    if (timer <= 0) {
+      clearInterval(timerInterval); // Stop the timer when it reaches zero
+      // Add your logic here for what happens when time runs out
+    }
+    redraw(); 
+  }, 1000); // Update every second
 }
