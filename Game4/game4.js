@@ -12,8 +12,8 @@ let stemColored = 0;
 let petalsColored = 0;
 let centerColored = 0;
 let level2Button; // Variable to hold the level 2 button
-let congratulationsScreen = false; // Flag to track if congratulations screen is shown
-let level2ScreenShown = false; // Flag to track if level 2 screen is shown
+let game4congratulationsScreen = false; // Flag to track if congratulations screen is shown
+let game4level2ScreenShown = false; // Flag to track if level 2 screen is shown
 let currentLevel = 1;
 const defaultColors = { ...flowerParts };
 
@@ -99,7 +99,7 @@ function checkCompletion() {
    if (stemColored && petalsColored && centerColored) {
 
 
-       congratulationsScreen = true;
+    game4congratulationsScreen = true;
 
 
        textSize(32);

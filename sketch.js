@@ -97,3 +97,17 @@ function mainMenu(){
 
 }
 
+function mousePressed(){
+  switch(currentActivity){ 
+    case 2:
+      game2MousePressed();
+      break;
+    case 3:
+      game3MousePressed();
+      break;
+    case 4:
+      game4MousePressed();
+      break;
+  }
+
+}
