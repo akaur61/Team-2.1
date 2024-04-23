@@ -4,7 +4,7 @@
 
 let currentActivity = 0;
 let menuButton, game1Button, game2Button, game3Button, game4Button;
-let photo1;
+
 /***** 
   * If you want to load images or sounds into your application,
   * try using preload()
@@ -30,29 +30,34 @@ function switchToMM(){
   game1Button.show();
   game2Button.show();
   game3Button.show();
-  game4Button.show();
+  
+  window.location.reload();
+  
+  
+
+  
 }
 
 function setup() {
   createCanvas(400, 600);
   background(220);
   menuButton = createButton('Home Page');
-  menuButton.position(100, 100);
+  menuButton.position(50, 50);
   menuButton.mousePressed(switchToMM);
   menuButton.hide();
   
   game1Button = createButton('Tracing Game');
-  game1Button.position(50, 550);
+  game1Button.position(50, 400);
   game1Button.mousePressed(game1Setup);
   game1Button.show();
   
-  game2Button = createButton('Connect By Numbers');
+  game2Button = createButton('Connect Words');
   game2Button.position(30, 500);
   game2Button.mousePressed(game2Setup);
   game2Button.show();
   
   game3Button = createButton('Matching Game');
-  game3Button.position(250, 550);
+  game3Button.position(250, 400);
   game3Button.mousePressed(game3Setup);
   game3Button.show();
   
@@ -60,11 +65,6 @@ function setup() {
   game4Button.position(250, 500);
   game4Button.mousePressed(game4Setup);
   game4Button.show();
-
-
-  
-
-
 }
 
 
@@ -97,22 +97,3 @@ function mainMenu(){
 
 }
 
-/*****
-* mousePressed() is a reserved function that is called whenever
-* the user presses the mouse button in the application.
-*****/
-function mousePressed(){
-  // Only game 4 uses the mousePressed function, but the switch statement
-  // makes it easy to add the mousePressed functionality for other games.
-  switch(currentActivity){
-    case 2: 
-      game2MousePressed();
-      break;
-    case 3: 
-      game3MousePressed();
-      break;
-    case 4: 
-      game4MousePressed();
-      break;
-  }
-}
